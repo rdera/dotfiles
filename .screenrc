@@ -1,0 +1,120 @@
+defkanji utf-8
+defencoding utf-8
+encoding utf-8 utf-8
+
+shell -zsh
+
+#セッションが不安定で接続がきれても安心
+autodetach on
+# commmand key default ^A
+escape ^Jj
+# on or off
+startup_message off
+
+# copy mode
+defscrollback 2000
+
+# monitor mode on or off
+defmonitor on
+
+# Use hardstatus
+hardstatus on
+#backtick 1 0 0 echo "Hey"
+#hardstatus alwayslastline " %-w%{=b rw}%n %t%{-}%+w %H"
+#hardstatus alwayslastline " %1` %= %-w%{=b bw}%n %t%{-}%+w"
+#hardstatus alwayslastline " %1` %-w%{=b bw}%n %t%{-}%+w"
+#hardstatus alwayslastline " %-w%{=b bw}%n %t%{-}%+w"
+#hardstatus alwayslastline " %-w%{=b bw}%n %t%{-}%+w"
+#hardstatus alwayslastline " %-Lw%{= BW}%50>%n%f* %t%{-}%+Lw%<"
+hardstatus alwayslastline " %-Lw%{=b bw}%50>%n %t%{-}%+Lw%<"
+#ハードステータスの行の上にフォーカス行を表示する
+#caption splitonly 画面分割したときだけ表示
+#default messeage `%3n %t`
+#caption always string "%?%F%{.R.}%?%2n %t%? [%h]%?"
+caption always
+
+
+# messeage time sec
+msgwait 3
+
+#onならビープ音の代わりにメッセージを表示する
+vbell on
+#ビープ音の代わりのメッセージを出力する
+#^Gは現在の行と列に関する情報
+vbell_msg "error at ^G"
+
+#バージョンとコンパイル日時を表示する
+#version
+
+
+#login on
+#deflogin on
+
+
+
+hardcopy_append on
+bind h hardcopy -h ~/.screen/hardcopy/${YSC}/${MSC}/${YSC}${MSC}${DSC}hard.log
+
+
+#screenの最大ウィンドウを制限する
+maxwin 20
+
+
+#shelltitle "Hello Screen"
+#title "Hey"
+
+#idle 10
+#blankerprg fortune test.txt
+
+
+
+#スクロールバッファの節約
+compacthist on
+
+#screen -t '*Scratch*' 9 sh -c 'cat > /dev/null'
+
+
+# ウィンドウ番号を1番からに設定する
+#screen 1
+#嘘でした。
+
+
+#bind -c RESIZE j resize +1
+#bind -c RESIZE k resize -1
+#進化系 ^jrの後にjjjとかkkkkとか連打が可能
+bind -c RESIZE j eval 'resize +1' 'command -c RESIZE'
+bind -c RESIZE k eval 'resize -1' 'command -c RESIZE'
+bind r eval 'echo "Resize Window!"' 'command -c RESIZE'
+
+#SやVで分割するだけだとよく分からないから色々する
+bind S eval 'echo "Split Window!     "' 'split'      'focus' 'next'
+bind V eval 'echo "Vert Split Window!"' 'vert_split' 'focus' 'next'
+
+#ウィンドウ名の最初の文字で簡単に移動しようとしたんですがうまくいかなかった。
+#bind s command -c PREFIX
+#bind -c PREFIX a select a
+#bind -c PREFIX b select b
+#bind -c PREFIX c select c
+#bind -c PREFIX d select d
+#bind -c PREFIX e select e
+#bind -c PREFIX f select f
+#bind -c PREFIX g select g
+#bind -c PREFIX h select h
+#bind -c PREFIX i select i
+#bind -c PREFIX j select j
+#bind -c PREFIX k select k
+#bind -c PREFIX l select l
+#bind -c PREFIX m select m
+#bind -c PREFIX n select n
+#bind -c PREFIX o select o
+#bind -c PREFIX p select p
+#bind -c PREFIX q select q
+#bind -c PREFIX r select r
+#bind -c PREFIX s select s
+#bind -c PREFIX t select t
+#bind -c PREFIX u select u
+#bind -c PREFIX v select v
+#bind -c PREFIX w select w
+#bind -c PREFIX x select x
+#bind -c PREFIX y select y
+#bind -c PREFIX z select z
