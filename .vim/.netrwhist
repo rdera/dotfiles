@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/home/rdera/www/views'
+let g:netrw_dirhist_2='/home/rdera/www/views/common'
+let g:netrw_dirhist_3='/home/rdera/www/views/tag'
+let g:netrw_dirhist_4='/home/rdera/www/views/tag/template'
+let g:netrw_dirhist_5='/home/rdera/www/views'
+let g:netrw_dirhist_6='/home/rdera/www/views/user'
+let g:netrw_dirhist_7='/home/rdera/www/proc'
+let g:netrw_dirhist_8='/home/rdera/www/proc/base'
